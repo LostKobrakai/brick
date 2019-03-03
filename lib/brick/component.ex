@@ -201,16 +201,18 @@ defmodule Brick.Component do
     Module.put_attribute(module, :brick_sources, {template, {type, body}})
   end
 
-  def put_dependency(module, dependancy, variant) do
-    Module.put_attribute(module, :brick_dependencies, {dependancy, variant})
-  end
-
   def get_config(module, variant) do
     if function_exported?(module, :config, 1) do
       module.config(variant)
     else
       %{}
     end
+  end
+
+  @doc false
+  # Can only be used at compile time
+  def put_dependency(module, dependancy, variant) do
+    Module.put_attribute(module, :brick_dependencies, {dependancy, variant})
   end
 
   @doc false
