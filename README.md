@@ -1,6 +1,10 @@
 # Brick
 
-**TODO: Add description**
+Brick is a component library bases on `Phoenix.View` and `Phoenix.Template`. 
+
+It's meant to be more strict in what it does no cater more to a component based
+workflow then `phoenix` does and also enable a few things, to not only allow 
+components to be used to render data, but also create styleguides for them.
 
 ## Installation
 
